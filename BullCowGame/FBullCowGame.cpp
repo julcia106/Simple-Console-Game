@@ -1,6 +1,8 @@
 #pragma once
 #include "pch.h"
 #include "FBullCowGame.h"
+#include <map>
+#define TMap std::map
 
 using int32 = int;
 
@@ -51,9 +53,20 @@ FBullCowCount FBullCowGame::SubmitValidGuess (Fstring Guess) {
 	return BullCowCount;
 }
 
+bool FBullCowGame::IsIsogram (Fstring word) const {
+
+	if ( word.length () <= 1 ) { return true; }
+	TMap <char, bool> LetterSeen; //setup map
+	for ( auto Letter : word ) //for all letter of the word
+	{
+		Letter = tolower (Letter); //handle mix case
+	}
+	return true;
+}
+
 EGuessStatus FBullCowGame::CheckGuessValidity (Fstring Guess) const {
 
-		if (false) {
+		if (!IsIsogram(Guess)) {
 			return EGuessStatus::Not_Isogram;
 		}
 		else if (false) {
