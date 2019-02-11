@@ -9,6 +9,8 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+pch.cpp
+pch.h
 
 # Build results
 [Dd]ebug/
