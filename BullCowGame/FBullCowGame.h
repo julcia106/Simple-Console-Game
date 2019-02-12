@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 
+//to make syntax Unreal friendly
 using Fstring = std::string;
 using int32 = int;
 
@@ -21,7 +22,7 @@ enum class EGuessStatus {
 
 class FBullCowGame {
 public:
-	FBullCowGame ();
+	FBullCowGame (); // constructor
 		
 	int32 GetMaxTries () const;
 	int32 GetCurrentTry () const;
@@ -32,11 +33,11 @@ public:
 	void Reset ();
 	FBullCowCount SubmitValidGuess (Fstring);
 private:
-	int32 MyMaxTries;
 	int32 MyCurrentTry;
 	Fstring MyHiddenWord;
 	bool bGameIsWon;
 
 	bool IsIsogram (Fstring) const;
+	bool IsLowercase (Fstring) const;
 
 };
